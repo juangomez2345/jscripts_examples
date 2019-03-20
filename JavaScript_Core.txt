@@ -1,0 +1,227 @@
+======================================================================
+  JavaScript Core
+======================================================================
+
+ECMAScript 	es una especificacion para javascript
+
+
+var		palabra reservada para declarar una variable
+		en js una variable puede tomar cualquier tipo de dato
+
+		var pi = 3.14;
+		var person = "John Doe";
+		var miObjecto = {nombre: "name1", telefono:"123456"};
+		var miArragle = [1,2,3,4,5];
+
+
+tipo de datos	var length = 16;                               // Number
+		var lastName = "Johnson";                      // String
+		var x = {firstName:"John", lastName:"Doe"};    // Object 
+		var x;           			       // undefined
+		var x = true;				       // boolean
+		
+undefined	es una variable declarada pero no inicializada
+null		valor de una variable que indica ausencia todal de valor
+
+functions	palabra reservada para crear funciones en js
+		function miFuncion(){ console.log("mensage"); }			
+
+==		compara valores (x="1" y="1"  x==y true)
+===		compara referencia de objectos 
+
+
+...		operador de propagacion (spread operator)
+		permite que una expresion sea expandida en situaciones donde se esperan 
+		multiples argumentos (llamadas a funciones) o 
+		multiples elementos (arrays literales)
+		
+
+this		su valor hace referencia al propietario de la funcion que la esta invocando 
+		o al objeto donde dicha funcion es un metodo
+
+
+metodo bind	se define como un pseudo constructor
+		cuando se ejecuta sobre una funcion, este crea una nueva funcion que nos 
+		permite manipular tanto su valor this como los parametros que espera
+		permiten ademas clonar objetos y sobreescribir sus propiedades y metodos nativos
+
+
+metodos de un
+array		.pop();		// regresa el ultimo valor del arreglo
+		.push();	// agrega al final del arreglo
+		.shift(); 	// remueve el primer elemento del arreglo
+		.unshift();	// agrega un elemento al inicio del arreglo
+		.concat();	// concatena dos arreglos
+		.slice();	// corta un arreglo
+
+		.forEach()	// itera el arreglo pasando una funcion callback
+				// por cada elemento del arreglo, provee de 3
+				// parametros: value, index, array
+
+		.map()		// itera el arreglo pasando una funcion callback
+				// por cada elemento del arreglo, retorna un nuevo
+				// arreglo con los elementos alterados, provee de 3
+				// parametros: value, index, array
+
+		.filter()	// itera el arreglo pasando una funcion callback
+				// por cada elemento del arreglo, retorna un nuevo
+				// arreglo con los elementos alterados, provee de 3
+				// parametros: value, index, array
+
+		.reduce()	// itera el arreglo pasando una funcion callback
+				// por cada elemento del arreglo, retorna un unico
+				// valor alterado, provee de 4 parametros: 
+				// total, value, index, array
+
+
+Hoisted		caracteristica en js de poder declarar una variable aun despues
+		de haberla utilizado
+		x = 5;
+		var x;
+		
+modo estricto	use strict es utilizado para evitar conflictos en el codigo
+		tales como variable no definidas
+
+
+let 		palabra reservada para definir el alcance de una variable
+ 		una variable declarada dentro de un bloque no podra ser
+		accedida desde un bloque externo
+
+const		palabra reservada para definir una referencia constate a una 
+		variable
+
+
+callbacks	son funciones que se envian como parametros
+
+
+
+try, catch
+finally, throw	palabras reservadad con funcionalidad similar a Java
+
+
+ECMAScript 5
+  use strict
+  String.trim()
+  Array.isArray()
+  Array.forEach()
+  Array.map()
+  Array.filter()
+  Array.reduce()
+  Array.reduceRight()
+  Array.every()
+  Array.some()
+  Array.indexOf()
+  Array.lastIndexOf()
+  JSON.parse()
+  JSON.stringify()
+  Date.now()
+
+
+
+
+ECMAScript 6
+  let
+  const
+  Exponentiation (**)
+  Default parameter values
+  Array.find()
+  Array.findIndex()
+
+
+
+
+
+
+
+Object
+----------------------------------------------------------------------
+		un objeto contiene muchos valores
+		var car = { type:"Fiat", model:"500", color:"white" }; 
+
+		se puede acceder a una propiedad atravez de:
+		objectName.propertyName  o   objectName["propertyName"] 
+		
+		se puede definir un metodo de objeto
+		var person = {
+  			firstName: "John",
+			lastName : "Doe",
+  			fullName : function() {
+    				return this.firstName + " " + this.lastName;
+  				}
+			};
+		var name = person.fullName();
+
+
+for...in	loop creado para iterar las propiedades de un objeto:
+
+		var person = {fname:"John", lname:"Doe", age:25}; 
+		for (x in person) {
+			console.log(x); //fname lname age
+  			console.log(person[x]); //John Doe 25
+		}
+
+
+
+Prototype	es la forma de heredar de otro objeto y tener la capacidad
+		de agregar nuevas propiedades o metodos
+
+		function Person(first, last, age, eyecolor) {
+  			this.firstName = first;
+  			this.lastName = last;
+		}
+
+		Person.prototype.nationality = "English";
+
+		
+
+
+JSON
+----------------------------------------------------------------------
+		Formato muy similar a objetos de js pero con algunas
+		diferencias:
+
+Llaves
+		JSON
+		{ "name":"John" }  // las llaves deben ser strings
+
+		JavaScript
+		{ name:"John" }	   // las llaves pueden ser strings, numbers, etc
+
+
+Valores	
+		JSON
+		{ "name":"John" }  // los valores deben estar con dobles comillas
+
+		JavaScript
+		{ name:'John' }	   // los valores pueden estar en comillas simples
+
+
+
+
+
+
+Funciones flecha
+----------------------------------------------------------------------
+		function sumar(a, b) { return a+b; }   // funcion normal
+		var sumar = (a, b) => { return a+b; }  // funcion flecha
+
+		Con las funciones flecha:
+
+		- Eliminamos la palabra reservada function
+		- Las funciones flecha son siempre anonimas
+		- No es necesario colocar los parametros entre parentesis si solo hay un parametro. 
+		- Si no necesitamos parametros, tenemos que incluir el parentesis vacio
+		- Si solo tenemos una instruccion en el cuerpo no necesitamos usar las llaves
+		- Si necesitamos incluir varias instrucciones en nuestra funcion, 
+		  entonces necesitamos incluir las clasicas llaves y el retorno
+		- Si la funcion tiene que devolver un objeto, tenemos que ponerlo entre parentesis
+
+
+
+
+
+
+
+
+
+
