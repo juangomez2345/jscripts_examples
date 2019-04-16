@@ -1,0 +1,46 @@
+<HTML>
+  <HEAD>
+    <script type="text/javascript" src="funciones.js"></script>
+  </HEAD>
+  <BODY>
+    <input type="button" value="random" onclick="getRandomNumbersInArray();">
+  </BODY>
+</HTML>
+
+
+//-----------------------------------------------------------------
+
+function getRandomNumbersInArray()
+{  
+  var arrayOfNumbers = [];
+  var totalNumberInArray = 10
+  var maxRandomNumber = 11
+  
+  while(arrayOfNumbers.length < totalNumberInArray && totalNumberInArray < maxRandomNumber){
+    generateRandomNumbers(arrayOfNumbers, maxRandomNumber);
+  }
+  
+  console.log(arrayOfNumbers);
+}
+
+function generateRandomNumbers(arrayOfNumbers, maxRandomNumber)
+{  
+    var randomNumber = Math.floor(Math.random() * maxRandomNumber);
+    if(!arrayOfNumbers.some(function(e){return e == randomNumber}))
+    {
+        arrayOfNumbers.push(randomNumber);
+    }
+}
+
+
+//-------------------------------------------------------------------
+
+
+function callConsole()
+{
+var lista = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+lista = lista.sort(function() {return Math.random() - 0.5});
+console.log(lista); // imprime por ejemplo: 7,9,1,5,2,3,6,4,8
+}
+
+

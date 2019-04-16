@@ -1,0 +1,75 @@
+<HTML>
+  <HEAD>
+    <script type="text/javascript" src="funciones.js"></script>
+  </HEAD>
+  <BODY>
+    <input type="button" value="random" onclick="getRandomNumbersInArray();">
+  </BODY>
+</HTML>
+
+
+//-----------------------------------------------------
+
+
+const arrayObject = [
+  {
+    Title: 'Topic 1',
+    Description: 'Description 1'
+  },
+  {
+    Title: 'Topic 2',
+    Description: 'Description 2'
+  },
+  {
+    Title: 'Topic 3',
+    Description: 'Description 3'
+  },
+  {
+    Title: 'Topic 4',
+    Description: 'Description 4'
+  },
+  {
+    Title: 'Topic 5',
+    Description: 'Description 5'
+  }  
+]
+
+
+//console.log(arrayObject);
+
+
+
+function getRandomNumbersInArray()
+{  
+  var arrayOfNumbers = [];
+  var totalNumberInArray = 3
+  var maxRandomNumber = 4
+  
+  while(arrayOfNumbers.length < totalNumberInArray && totalNumberInArray < maxRandomNumber){
+    generateRandomNumbers(arrayOfNumbers, maxRandomNumber);
+  }
+  
+  console.log(arrayOfNumbers);
+  
+  
+  console.log('0-1, 1-2, 2-3, 3-4, 4-5');
+  var arrayOfTopics = [];
+  var index = 0;
+  while(arrayOfTopics.length < arrayOfNumbers.length)
+  {
+        //console.log(arrayOfNumbers[index]);
+        arrayOfTopics.push(arrayObject[arrayOfNumbers[index]]);
+        index++;
+  }
+  
+  console.log(arrayOfTopics);
+}
+
+function generateRandomNumbers(arrayOfNumbers, maxRandomNumber)
+{  
+    var randomNumber = Math.floor(Math.random() * maxRandomNumber);
+    if(!arrayOfNumbers.some(function(e){return e == randomNumber}))
+    {
+        arrayOfNumbers.push(randomNumber);
+    }
+}
